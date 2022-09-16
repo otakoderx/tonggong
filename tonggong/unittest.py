@@ -39,6 +39,9 @@ class TestCaseMixin(unittest.TestCase):
     def http_bad(self, response, **kwargs):
         return self.http_ok(response, http.HTTPStatus.BAD_REQUEST, **kwargs)
 
+    def http_401(self, response, **kwargs):
+        return self.http_ok(response, http.HTTPStatus.UNAUTHORIZED, **kwargs)
+
     def http_403(self, response, **kwargs):
         return self.http_ok(response, http.HTTPStatus.FORBIDDEN, **kwargs)
 
